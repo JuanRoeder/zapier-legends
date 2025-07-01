@@ -1,0 +1,47 @@
+<!-- Leyenda de campos de cumplimiento – incrústalo como HTML en tu interfaz -->
+<div class="container py-3">
+  <h5 class="mb-3 fw-semibold">Leyenda de validaciones</h5>
+
+  <ul class="list-inline d-flex flex-wrap gap-3">
+    <li class="list-inline-item" data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Logo Claro no debe estar presente en la imagen">
+      <span class="badge rounded-pill border px-3 py-2 text-body">rule1_nologo</span>
+    </li>
+
+    <li class="list-inline-item" data-bs-toggle="tooltip"
+        title="No debe contener información de la competencia">
+      <span class="badge rounded-pill border px-3 py-2 text-body">rule2_nocompetencia</span>
+    </li>
+
+    <li class="list-inline-item" data-bs-toggle="tooltip"
+        title="Debe incluir la insignia «Distribuidor Claro Autorizado»">
+      <span class="badge rounded-pill border px-3 py-2 text-body">rule3_insignia</span>
+    </li>
+
+    <li class="list-inline-item" data-bs-toggle="tooltip"
+        title="Debe incluir «Distribuidor Autorizado Claro» y #SoyDistribuidorClaro">
+      <span class="badge rounded-pill border px-3 py-2 text-body">rule4_dist_auto_hashtag</span>
+    </li>
+
+    <li class="list-inline-item" data-bs-toggle="tooltip"
+        title="Debe mencionar: Términos y Condiciones, vigencia, Stock y Precios Totales">
+      <span class="badge rounded-pill border px-3 py-2 text-body">rule5_term_cond_vig_stock_prec</span>
+    </li>
+
+    <li class="list-inline-item" data-bs-toggle="tooltip"
+        title="No debe aparecer el influencer Advíncula">
+      <span class="badge rounded-pill border px-3 py-2 text-body">rules6_influencer</span>
+    </li>
+  </ul>
+</div>
+
+<script>
+// Activa todos los tooltips de Bootstrap en cuanto el DOM esté cargado
+document.addEventListener('DOMContentLoaded', () => {
+  const tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  );
+  tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
+});
+</script>

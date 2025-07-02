@@ -1,47 +1,114 @@
-<!-- Leyenda de campos de cumplimiento – incrústalo como HTML en tu interfaz -->
-<div class="container py-3">
-  <h5 class="mb-3 fw-semibold">Leyenda de validaciones</h5>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leyenda horizontal</title>
 
-  <ul class="list-inline d-flex flex-wrap gap-3">
-    <li class="list-inline-item" data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        title="Logo Claro no debe estar presente en la imagen">
-      <span class="badge rounded-pill border px-3 py-2 text-body">rule1_nologo</span>
-    </li>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-9ndCyUa6mF2+5UTcR8d7f2U7mtL9m4h/+1L5c5i4yM5sC065X+y3dfyGwh/7gHT5"
+        crossorigin="anonymous">
 
-    <li class="list-inline-item" data-bs-toggle="tooltip"
-        title="No debe contener información de la competencia">
-      <span class="badge rounded-pill border px-3 py-2 text-body">rule2_nocompetencia</span>
-    </li>
+  <style>
+    /* ---------- Tarjeta de leyenda ---------- */
+    .legend-card{
+      width: 220px;                      /* ancho constante para alinear */
+      border: 1px solid #e9ecef;
+      border-radius: .75rem;
+      padding: .75rem 1rem;
+      background:#fff;
+      position: relative;
+    }
+    .legend-card .rank{
+      font-size:2.5rem;
+      font-weight:700;
+      line-height:1;
+      color:#000;
+      opacity:.08;
+      position:absolute;
+      top:50%;
+      right:1rem;
+      transform:translateY(-50%);
+      pointer-events:none;
+    }
+  </style>
+</head>
+<body>
 
-    <li class="list-inline-item" data-bs-toggle="tooltip"
-        title="Debe incluir la insignia «Distribuidor Claro Autorizado»">
-      <span class="badge rounded-pill border px-3 py-2 text-body">rule3_insignia</span>
-    </li>
+  <div class="container py-4">
+    <h5 class="fw-semibold mb-3">Leyenda de validaciones</h5>
 
-    <li class="list-inline-item" data-bs-toggle="tooltip"
-        title="Debe incluir «Distribuidor Autorizado Claro» y #SoyDistribuidorClaro">
-      <span class="badge rounded-pill border px-3 py-2 text-body">rule4_dist_auto_hashtag</span>
-    </li>
+    <!-- Flex principal: dispone los cards en horizontal y hace wrap -->
+    <div class="d-flex flex-wrap gap-3">
 
-    <li class="list-inline-item" data-bs-toggle="tooltip"
-        title="Debe mencionar: Términos y Condiciones, vigencia, Stock y Precios Totales">
-      <span class="badge rounded-pill border px-3 py-2 text-body">rule5_term_cond_vig_stock_prec</span>
-    </li>
+      <!-- 1 -->
+      <div class="legend-card">
+        <div class="d-flex align-items-center mb-1">
+          <span class="fs-4 text-success">✅</span>
+          <h6 class="mb-0 fw-semibold ms-2 flex-grow-1">rule1_nologo</h6>
+          <span class="rank">1</span>
+        </div>
+        <small class="text-muted ps-4">Logo Claro no debe estar presente en la imagen</small>
+      </div>
 
-    <li class="list-inline-item" data-bs-toggle="tooltip"
-        title="No debe aparecer el influencer Advíncula">
-      <span class="badge rounded-pill border px-3 py-2 text-body">rules6_influencer</span>
-    </li>
-  </ul>
-</div>
+      <!-- 2 -->
+      <div class="legend-card">
+        <div class="d-flex align-items-center mb-1">
+          <span class="fs-4 text-success">✅</span>
+          <h6 class="mb-0 fw-semibold ms-2 flex-grow-1">rule2_nocompetencia</h6>
+          <span class="rank">2</span>
+        </div>
+        <small class="text-muted ps-4">No debe contener información de la competencia</small>
+      </div>
 
-<script>
-// Activa todos los tooltips de Bootstrap en cuanto el DOM esté cargado
-document.addEventListener('DOMContentLoaded', () => {
-  const tooltipTriggerList = [].slice.call(
-    document.querySelectorAll('[data-bs-toggle="tooltip"]')
-  );
-  tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
-});
-</script>
+      <!-- 3 -->
+      <div class="legend-card">
+        <div class="d-flex align-items-center mb-1">
+          <span class="fs-4 text-success">✅</span>
+          <h6 class="mb-0 fw-semibold ms-2 flex-grow-1">rule3_insignia</h6>
+          <span class="rank">3</span>
+        </div>
+        <small class="text-muted ps-4">Debe incluir la insignia «Distribuidor Claro Autorizado»</small>
+      </div>
+
+      <!-- 4 -->
+      <div class="legend-card">
+        <div class="d-flex align-items-center mb-1">
+          <span class="fs-4 text-success">✅</span>
+          <h6 class="mb-0 fw-semibold ms-2 flex-grow-1">rule4_dist_auto_hashtag</h6>
+          <span class="rank">4</span>
+        </div>
+        <small class="text-muted ps-4">Debe incluir “Distribuidor Autorizado Claro” y #SoyDistribuidorClaro</small>
+      </div>
+
+      <!-- 5 -->
+      <div class="legend-card">
+        <div class="d-flex align-items-center mb-1">
+          <span class="fs-4 text-success">✅</span>
+          <h6 class="mb-0 fw-semibold ms-2 flex-grow-1">rule5_term_cond_vig_stock_prec</h6>
+          <span class="rank">5</span>
+        </div>
+        <small class="text-muted ps-4">Debe mencionar: Términos y Condiciones, vigencia, Stock y Precios Totales</small>
+      </div>
+
+      <!-- 6 -->
+      <div class="legend-card">
+        <div class="d-flex align-items-center mb-1">
+          <span class="fs-4 text-success">✅</span>
+          <h6 class="mb-0 fw-semibold ms-2 flex-grow-1">rules6_influencer</h6>
+          <span class="rank">6</span>
+        </div>
+        <small class="text-muted ps-4">No debe aparecer el influencer Advíncula</small>
+      </div>
+
+    </div><!-- /.flex-wrap -->
+  </div><!-- /.container -->
+
+  <!-- Bootstrap JS (opcional, aquí no usamos tooltips) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-v8mBqDckT1Zzh8N5aCkoKjHtg8Afji8gO2p/1T9npw+26lIeh1z0JJo3rkK/3pMW"
+          crossorigin="anonymous"></script>
+</body>
+</html>

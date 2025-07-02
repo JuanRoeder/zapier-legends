@@ -12,13 +12,15 @@
   <style>
     /* ---------- Contenedor que fuerza UNA sola fila ---------- */
     .legend-row{
-      display: grid;
+      display: flex;
       grid-auto-flow: column;           /* coloca columnas una tras otra */
       grid-auto-columns: 180px;         /* cada tarjeta ocupa 160 px */
       gap: 1rem;                        /* separación entre columnas */
       overflow-x: auto;                 /* scroll horizontal si se desborda */
       padding-bottom: .5rem;            /* espacio para que no corte el scroll bar */
       justify-content: center;
+      /*max-width: 14rem;
+      row-gap: 1rem;*/
     }
 
     /* ---------- Tarjeta ---------- */
@@ -29,10 +31,11 @@
       background: #fff;
       position: relative;
       min-height: 84px;
+      max-width: 12rem;
     }
     .legend-card .rank{
       position: absolute;
-      top: 20%;  right: .8rem;
+      top: 75%;  right: .8rem;
       transform: translateY(-50%);
       font-size: 2.3rem;
       font-weight: 700;
